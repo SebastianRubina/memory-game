@@ -14,11 +14,10 @@ export default function SingleCard( { card, handleChoice, flipped, disabled } ) 
                 <img className="front" src={card.src} alt="card front" />
                 <img 
                     className="back" 
-                    src="./img/cover.png" 
+                    src="/img/cover.png" 
                     onClick={handleClick} 
                     alt="card back" 
                 />
-                <p>{__dirname}</p>
             </div>
         </div>
     )
