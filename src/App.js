@@ -3,12 +3,12 @@ import './App.css';
 import SingleCard from './components/SingleCard';
 
 const cardImages = [
-  { "src": `${process.env.PUBLIC_URL}/img/helmet-1.png`, matched: false },
-  { "src": `${process.env.PUBLIC_URL}/img/potion-1.png`, matched: false },
-  { "src": `${process.env.PUBLIC_URL}/img/ring-1.png`, matched: false },
-  { "src": `${process.env.PUBLIC_URL}/img/scroll-1.png`, matched: false },
-  { "src": `${process.env.PUBLIC_URL}/img/shield-1.png`, matched: false },
-  { "src": `${process.env.PUBLIC_URL}/img/sword-1.png`, matched: false },
+  { "src": `${process.env.PUBLIC_URL}/img/bulbasaur.png`, matched: false },
+  { "src": `${process.env.PUBLIC_URL}/img/charmander.png`, matched: false },
+  { "src": `${process.env.PUBLIC_URL}/img/caterpie.png`, matched: false },
+  { "src": `${process.env.PUBLIC_URL}/img/jigglypuff.png`, matched: false },
+  { "src": `${process.env.PUBLIC_URL}/img/pikachu.png`, matched: false },
+  { "src": `${process.env.PUBLIC_URL}/img/squirtle.png`, matched: false },
 ]
 
 function App() {
@@ -33,6 +33,7 @@ function App() {
 
   // Handle a Choice
   const handleChoice = (card) => {
+    setTimeout(() => setDisabled(false), 200);
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   }
 
@@ -46,7 +47,6 @@ function App() {
     if (choiceOne && choiceTwo) {
       setDisabled(true);
       if (choiceOne.src === choiceTwo.src) {
-        console.log("Cards match!");
         setCards(prevCards => {
           return prevCards.map(card => {
             if (card.src === choiceOne.src) {
@@ -58,7 +58,6 @@ function App() {
         })
         resetTurn();
       } else {
-        console.log("Cars DON'T match!");
         setTimeout(() => resetTurn(), 1000);
       }
     }
@@ -74,7 +73,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Memory Game</h1>
+      <h1>Pokemon Memory!</h1>
       <button onClick={shuffleCards}>New Game</button>
 
       <div className="card-grid">
