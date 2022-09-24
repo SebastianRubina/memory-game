@@ -88,7 +88,7 @@ function App() {
           />
         ))}
       </div>
-      <p>Turns: {turns} - 4</p>
+      <p>Turns: {turns} - {__dirname}</p>
     </div>
   );
 }
