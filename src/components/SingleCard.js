@@ -14,7 +14,7 @@ export default function SingleCard( { card, handleChoice, flipped, disabled } ) 
                 <img className="front" src={card.src} alt="card front" />
                 <img 
                     className="back" 
-                    src="https://sebastianrubina.github.io/memory-game/img/cover.png" 
+                    src={`${process.env.PUBLIC_URL}/img/cover.png`}
                     onClick={handleClick} 
                     alt="card back" 
                 />
